@@ -2,3 +2,5 @@ name: Guest book
 type: module
 description: 'This module adds a guest book.'
 core_version_requirement: ^8 || ^9
+#dependencies:
+#  - drupal:datatime

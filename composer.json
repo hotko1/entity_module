@@ -17,11 +17,13 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/apigee_edge": "^1.24",
         "drupal/bootstrap": "^3.23",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/devel": "^4.1",
+        "drupal/devel_entity_updates": "^3.0",
         "drupal/examples": "^3.0",
         "drush/drush": "^10.2"
     },

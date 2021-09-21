@@ -1,0 +1,22 @@
+# Define the 'local' links for the module
+
+review.settings_tab:
+  route_name: guests_book_review.review_settings
+  title: Settings
+  base_route: guests_book_review.review_settings
+
+review.view:
+  route_name: entity.guests_book_review.canonical
+  base_route: entity.guests_book_review.canonical
+  title: View
+
+review.page_edit:
+  route_name: entity.guests_book_review.edit_form
+  base_route: entity.guests_book_review.canonical
+  title: Edit
+
+review.delete_confirm:
+  route_name: entity.guests_book_review.delete_form
+  base_route: entity.guests_book_review.canonical
+  title: Delete
+  weight: 10

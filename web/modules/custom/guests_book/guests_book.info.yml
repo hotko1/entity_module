@@ -1,0 +1,8 @@
+name: Guests Book
+type: module
+description: 'This module adds a guests book.'
+core_version_requirement: ^8 || ^9
+#dependencies:
+#  - options
+#  - entity_reference
+#  - examples
