@@ -1,0 +1,13 @@
+# Define the menu links for this module
+
+entity.guestbook.collection:
+  title: 'GuestBook: Reviews listing'
+  route_name: entity.guestbook.collection
+  description: 'List Reviews'
+  parent: system.admin_structure
+  weight: 10
+guestbook.admin.structure.settings:
+  title: Review Settings
+  descriotion: 'Configure Review entity'
+  route_name: guestbook.review_settings
+  parent: system.admin_structure
