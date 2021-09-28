@@ -1,0 +1,5 @@
+name: Ar
+type: module
+description: 'This module adds a ar.'
+package: custom
+core_version_requirement: 9.x

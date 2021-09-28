@@ -1,5 +1,0 @@
-name: Guestbook
-type: module
-description: 'This module adds a guestbook.'
-package: custom
-core_version_requirement: 9.x

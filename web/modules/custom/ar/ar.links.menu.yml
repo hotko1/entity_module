@@ -1,0 +1,13 @@
+# Define the menu links for this module
+
+entity.ar.collection:
+  title: 'Ar: Reviews listing'
+  route_name: entity.ar.collection
+  description: 'List Reviews'
+  parent: system.admin_structure
+  weight: 10
+ar.admin.structure.settings:
+  title: Review Settings
+  descriotion: 'Configure Review entity'
+  route_name: ar.review_settings
+  parent: system.admin_structure

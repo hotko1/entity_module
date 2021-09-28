@@ -1,0 +1,73 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local actions.
+entity.ar.full:
+  path: '/ar'
+  defaults:
+    # Calls the view controller, defined in the annotation of the review entity
+    _controller: '\Drupal\ar\Controller\ArController::content'
+#    _entity_view: 'ar'
+#    _entity_list: 'ar'
+    _title: 'Review Content'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+#    _entity_access: 'ar.view'
+#    _entity_create_access: 'ar'
+#    _permission: 'administer review entity'
+#    _permission: 'view ar'
+    _permission: 'access content'
+
+entity.ar.canonical:
+  path: '/ar/{ar}'
+  defaults:
+    # Calls the view controller, defined in the annotation of the review entity
+    _entity_view: 'ar'
+    _title: 'Review Content'
+  requirements:
+    # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'ar.view'
+
+entity.ar.collection:
+  path: '/ar/list'
+  defaults:
+    # Calls the list controller, defined in the annotation of the review entity.
+    _entity_list: 'ar'
+    _title: 'Review List'
+  requirements:
+    # Checks for permission directly.
+    _permission: 'administer review entity'
+
+ar.contact_add:
+  path: '/ar/add'
+  defaults:
+    # Calls the form.add controller, defined in the review entity.
+    _entity_form: ar.add
+    _title: 'Add Review'
+  requirements:
+    _entity_create_access: 'ar'
+
+entity.ar.edit_form:
+  path: '/ar/{ar}/edit'
+  defaults:
+    # Calls the form.edit controller, defined in the review entity.
+    _entity_form: ar.edit
+    _title: 'Edit Review'
+  requirements:
+    _entity_access: 'ar.edit'
+
+entity.ar.delete_form:
+  path: '/ar/{ar}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the review entity.
+    _entity_form: ar_review.delete
+    _title: 'Delete Review'
+  requirements:
+    _entity_access: 'ar.delete'
+
+ar.review_settings:
+  path: 'admin/structure/ar'
+  defaults:
+    _form: '\Drupal\ar\Form\ArSettingsForm'
+    _title: 'Review Settings'
+  requirements:
+    _permission: 'administer review entity'

@@ -1,0 +1,61 @@
+{# ** @file modules/custom/ar/templates/ar.html.twig
+ *
+ * Default theme implementation to present guest_book data.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *          content.field_name to access public fields
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see ar_preprocess_ar_template()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="reviews" {{ attributes.addClass('guestbook') }}>
+
+  {#         block with Avatar and data #}
+
+  <div class="name-user">
+    <div class="avatar-user">
+      {{ content.avatar_user }}
+    </div>
+    <span class="name-user">{{ content.name_user }}</span>
+    <span class="date">{{ content.created }}</span>
+  </div>
+  <div class="comment">
+
+    {#           block with contacts #}
+
+    <div class="contacts">
+      <div class="tel">
+        <span class="phone"> {{ content.phone_user }}</span>
+      </div>
+      <div class="post">
+        <span class="email">{{ content.email_user }}</span>
+      </div>
+
+      {#             administrative buutons #}
+
+      {% if user.hasPermission('administer nodes') %}
+        <div class="manage">
+          {{ button }}
+        </div>
+      {% endif %}
+    </div>
+
+    {#           block with comment text #}
+
+    <div class="comment-text">
+      {% if content.image_user is not null %}
+        <div class="picture"> {{ content.image_user }} </div>
+      {% endif %}
+      <div class="message-user">
+        {{ content.message_user }}
+      </div>
+    </div>
+  </div>
+
+
+</div>

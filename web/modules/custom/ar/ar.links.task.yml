@@ -1,0 +1,27 @@
+# Define the 'local' links for the module
+
+review.settings_tab:
+  route_name: ar.review_settings
+  title: Settings
+  base_route: ar.review_settings
+
+full.view:
+  route_name: entity.ar.full
+  base_route: entity.ar.full
+  title: View
+
+review.view:
+  route_name: entity.ar.canonical
+  base_route: entity.ar.canonical
+  title: View
+
+review.page_edit:
+  route_name: entity.ar.edit_form
+  base_route: entity.ar.canonical
+  title: Edit
+
+review.delete_confirm:
+  route_name: entity.ar.delete_form
+  base_route: entity.ar.canonical
+  title: Delete
+  weight: 10
