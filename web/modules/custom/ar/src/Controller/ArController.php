@@ -54,15 +54,11 @@ class ArController extends ControllerBase {
     $comments = [];
 
     $ar_storage = \Drupal::entityTypeManager()->getStorage('ar');
-    $entity = $ar_storage->create([
-      'entity_type' => 'node',
-      'entity' => 'ar',
-    ]);
-//    $ar_form = $this->entityFormBuilder->getForm($entity, 'add');
+    $entity = $ar_storage->create();
     $ar_form = $this->entityFormBuilder()->getForm($entity, 'add');
     $entity_id = $ar_storage->getQuery()
       ->sort('created', 'DESC')
-      ->pager(5, 0)
+      ->pager(5)
       ->execute();
 
     $view = \Drupal::entityTypeManager()->getViewBuilder('ar');
@@ -72,10 +68,15 @@ class ArController extends ControllerBase {
       $comments[] = $view->view($review);
     }
 
+//    $pager = [
+//      '#type' => 'pager',
+//    ];
+
     return [
-      '#theme' => 'ar',
+      '#theme' => 'ar_page',
       '#form' => $ar_form,
       '#review' => $comments,
+//      '#pager' => $pager,
       '#pager' => [
         '#type' => 'pager',
       ],

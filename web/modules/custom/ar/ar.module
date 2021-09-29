@@ -5,17 +5,37 @@
  * Define hook_theme.
  */
 
+use Drupal\Core\Render\Element;
+
 /**
  * Implements hook_theme().
  */
 function ar_theme($existing, $type, $theme, $path) {
   return [
-    'ar' => [
+    'ar_page' => [
       'variables' => [
-        'forms' => [],
-        'tables' => [],
-        'title' => '',
+        'form' => [],
+        'review' => [],
+        'pager' => [],
       ],
     ],
+    'ar' => [
+      'template' => 'ar-view',
+      'render element' => 'elements',
+    ]
   ];
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function ar_preprocess_ar(&$variables, $hook) {
+  $variables['content'] = [];
+
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+//  /** @var \Drupal\ar\Entity\Ar $entity */
+//  $entity = $variables['elements']['#ar'];
 }

@@ -37,14 +37,14 @@ class ArForm extends ContentEntityForm {
     $entity = $this->entity;
     if ($status == SAVED_UPDATED) {
       $this->messenger()
-        ->addMessage($this->t('The contact %feed has been updated.', ['%feed' => $entity->toLink()->toString()]));
+        ->addMessage($this->t('The message %feed has been updated.', ['%feed' => $entity->toLink()->toString()]));
     }
     else {
       $this->messenger()
-        ->addMessage($this->t('The contact %feed has been added.', ['%feed' => $entity->toLink()->toString()]));
+        ->addMessage($this->t('%feed, your message has been added.', ['%feed' => $entity->toLink()->toString()]));
     }
 
-    $form_state->setRedirectUrl($this->entity->toUrl('collection'));
+    $form_state->setRedirectUrl($this->entity->toUrl('full'));
     return $status;
   }
 

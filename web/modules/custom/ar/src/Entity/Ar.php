@@ -38,8 +38,10 @@ use Drupal\user\UserInterface;
  *   entity_keys = {
  *     "id" = "id",
  *     "uuid" = "uuid",
+ *     "label" = "name_user",
  *   },
  *   links = {
+ *     "full" = "/ar",
  *     "canonical" = "/ar/{ar}",
  *     "edit-form" = "/ar/{ar}/edit",
  *     "delete-form" = "/ar/{ar}/delete",
@@ -68,150 +70,153 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ->setReadOnly(TRUE);
 
     $fields['name_user'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('User name'))
-      ->setDescription(t('The name of the user'))
+      ->setLabel(t('Your name'))
+      ->setDescription(t('The length of the name is 2-100 letters'))
+      ->setSettings([
+        'default_value' => '',
+        'max_length' => '100',
+        'text_processing' => 0,
+      ])
+      ->setPropertyConstraints('value', [
+        'Length' => [
+          'min' => 2,
+          'minMessage' => t('Your name is too short. Please enter a full name'),
+        ],
+      ])
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'above',
+        'type' => 'string',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'string_textfield',
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', TRUE);
+
+    $fields['email_user'] = BaseFieldDefinition::create('email')
+      ->setLabel(t('Your email'))
+      ->setDescription(t('Email should look like this: example@mail.com'))
       ->setSettings([
         'default_value' => '',
         'max_length' => '225',
         'text_processing' => 0,
       ])
+      ->setPropertyConstraints('value', [
+        'Regex' => [
+          'pattern' => '/^[\w+]{2,100}@([\w+]{2,20})\.[\w+]{2,20}$/',
+          'message' => t('Email should look like this: example@mail.com'),
+        ],
+      ])
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'above',
-        'type' => 'string',
-        'weight' => -6,
+        'type' => 'email',
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -6,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['email_user'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('User email'))
-      ->setDescription(t('The email of the user'))
-      ->setSettings([
-        'default_value' => '',
-        'max_length' => '225',
-        'text_processing' => 0,
-      ])
-      ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'string',
-        'weight' => -6,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
-        'weight' => -6,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-    $fields['phone_user'] = BaseFieldDefinition::create('integer')
-      ->setLabel(t('User phone'))
-      ->setDescription(t('The phone of the user'))
+    $fields['phone_user'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Your phone'))
+      ->setDescription(t('Phone should look like this: +380(99)9999999'))
       ->setSettings([
         'default_value' => '0',
-        'max_length' => '225',
+        'max_length' => '14',
         'text_processing' => 0,
       ])
+      ->setPropertyConstraints('value', [
+        'Regex' => [
+          'pattern' => '/^\+[0-9]{10,14}$/',
+          'message' => t('Phone should look like this: +380(99)9999999'),
+        ],
+      ])
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'above',
-        'type' => 'int',
-        'weight' => -6,
+        'type' => 'string',
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -6,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
-    $fields['message_user'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('User message'))
+    $fields['message_user'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Your message'))
       ->setDescription(t('The message of the user'))
       ->setSettings([
         'default_value' => '0',
         'max_length' => '5000',
         'text_processing' => 0,
       ])
+      ->setRequired(TRUE)
       ->setDisplayOptions('view', [
         'label' => 'above',
-        'type' => 'string',
-        'weight' => -6,
+        'type' => 'string_textarea',
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
-        'weight' => -6,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['avatar_user'] = BaseFieldDefinition::create('image')
-      ->setLabel(t('User avatar'))
-      ->setDescription(t('The avatar of the user'))
+      ->setLabel(t('Your avatar'))
+      ->setDescription(t('Avatar should be less than 2 MB and in JPEG, JPG or PNG format.'))
       ->setSettings([
         'file_directory' => 'images/avatar/',
-        'alt_field_required' => TRUE,
+        'alt_field_required' => FALSE,
+        'alt_field' => FALSE,
         'file_extensions' => 'png jpg jpeg',
         'max_filesize' => 2097152,
+        'default_value' => NULL,
       ])
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'default',
-        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'label' => 'hidden',
         'type' => 'image_image',
-        'weight' => 0,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['image_user'] = BaseFieldDefinition::create('image')
-      ->setLabel(t('User image'))
-      ->setDescription(t('The image of the user'))
+      ->setLabel(t('Your image'))
+      ->setDescription(t('Image should be less than 5 MB and in JPEG, JPG or PNG format.'))
       ->setSettings([
         'file_directory' => 'images/image/',
-        'alt_field_required' => TRUE,
+        'alt_field_required' => FALSE,
+        'alt_field' => FALSE,
         'file_extensions' => 'png jpg jpeg',
         'max_filesize' => 5242880,
+        'default_value' => NULL,
       ])
       ->setDisplayOptions('view', [
         'label' => 'hidden',
         'type' => 'default',
-        'weight' => 0,
       ])
       ->setDisplayOptions('form', [
         'label' => 'hidden',
         'type' => 'image_image',
-        'weight' => 0,
-      ])
-      ->setDisplayConfigurable('form', TRUE)
-      ->setDisplayConfigurable('view', TRUE);
-
-    $current_date_time = DrupalDateTime::createFromTimestamp(time())
-      ->format('Y-m-d\TH:i:s');
-    $fields['start_date'] = BaseFieldDefinition::create('datetime')
-      ->setLabel(t('Start date'))
-      ->setDescription(t('Start date in GMT time.'))
-      ->setDefaultValue($current_date_time)
-      ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'string',
-        'weight' => -4,
-      ])
-      ->setDisplayOptions('form', [
-        'type' => 'datetime_default',
-        'weight' => -3,
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
 
     $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))
-      ->setDescription(t('The time that the entity was created.'));
+      ->setDescription(t('The time that the entity was created.'))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'type' => 'datetime_custom',
+        'settings' => [
+          'data_format' => 'm/j/Y H:i:s',
+        ],
+      ]);
 
     return $fields;
   }
@@ -316,7 +321,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
    * Get creation time.
    */
   public function getCreationTime() {
-    return $this->get('start_date')->value;
+    return $this->get('created')->value;
   }
 
   /**
@@ -325,7 +330,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
    * @return $this
    */
   public function setCreationTime($phone_user) {
-    return $this->set('start_date', $phone_user);
+    return $this->set('created', $phone_user);
   }
 
 }

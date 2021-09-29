@@ -8,7 +8,7 @@ entity.ar.full:
     _controller: '\Drupal\ar\Controller\ArController::content'
 #    _entity_view: 'ar'
 #    _entity_list: 'ar'
-    _title: 'Review Content'
+    _title: 'Guestbook'
   requirements:
     # Calls the access controller of the entity, $operation 'view'
 #    _entity_access: 'ar.view'

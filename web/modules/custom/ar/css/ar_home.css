@@ -1,0 +1,130 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+.ar-home {
+  padding: 15px;
+  background-color: #F5FFFA;
+}
+.ar-home .ar-form {
+  width: 60%;
+  margin: 0 auto;
+}
+.ar-home .ar-form .field--name-phone-user .form-group .form-control {
+  width: 50%;
+}
+.ar-home .guestbook .reviews {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: #FFF5EE;
+}
+.ar-home .guestbook .reviews .top-wrapper {
+  display: flex;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data {
+  background-color: #F5DEB3;
+  min-width: 170px;
+  text-align: center;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .avatar-user {
+  padding: 10px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .avatar-user .field--name-avatar-user .img-responsive {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user {
+  padding: 10px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user .field--name-name-user .field--item {
+  font-size: 28px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .date-created {
+  padding: 10px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-message {
+  margin-left: 10px;
+  padding: 10px;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-message .picture {
+  float: left;
+}
+.ar-home .guestbook .reviews .top-wrapper .user-message .picture .field--name-image-user .img-responsive {
+  margin-right: 15px;
+  max-width: 300px;
+  max-height: 300px;
+}
+.ar-home .guestbook .reviews .contact-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #20B2AA;
+}
+.ar-home .guestbook .reviews .contact-wrapper .phone {
+  margin-right: 30px;
+}
+.ar-home .pager-nav .pagination .pager__item:not(:first-child) a {
+  margin-left: 10px;
+}
+.ar-home .pager-nav .pagination > .active > a, .ar-home .pager-nav .pagination > .active > span, .ar-home .pager-nav .pagination > .active > a:hover, .ar-home .pager-nav .pagination > .active > span:hover, .ar-home .pager-nav .pagination > .active > a:focus, .ar-home .pager-nav .pagination > .active > span:focus {
+  background-color: #FFA500;
+  border-color: #FFA500;
+}
+.ar-home .pager-nav .pagination > .pager__item:first-child > a {
+  border-radius: 20px;
+}
+.ar-home .pager-nav .pagination > li:first-child > span {
+  border-radius: 20px;
+}
+.ar-home .pager-nav .pagination > li > a {
+  border-radius: 20px;
+}
+.ar-home .pager-nav .pagination > li > span {
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=ar_home.css.map */

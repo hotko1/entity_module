@@ -1,5 +1,11 @@
 # Define the menu links for this module
 
+entity.ar.full:
+  title: 'Ar: Reviews all'
+  route_name: entity.ar.full
+  description: 'Full page'
+  parent: entity.ar.full
+  weight: 5
 entity.ar.collection:
   title: 'Ar: Reviews listing'
   route_name: entity.ar.collection

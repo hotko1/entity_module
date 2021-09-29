@@ -1,6 +1,6 @@
 {# ** @file modules/custom/ar/templates/ar.html.twig
  *
- * Default theme implementation to present guest_book data.
+ * Default theme implementation to present ar data.
  *
  * Available variables:
  * - content: A list of content items. Use 'content' to print all content, or
@@ -14,40 +14,25 @@
 #}
 
 <div class="reviews" {{ attributes.addClass('guestbook') }}>
+  <div class="top-wrapper">
 
-  {#         block with Avatar and data #}
-
-  <div class="name-user">
-    <div class="avatar-user">
-      {{ content.avatar_user }}
-    </div>
-    <span class="name-user">{{ content.name_user }}</span>
-    <span class="date">{{ content.created }}</span>
-  </div>
-  <div class="comment">
-
-    {#           block with contacts #}
-
-    <div class="contacts">
-      <div class="tel">
-        <span class="phone"> {{ content.phone_user }}</span>
-      </div>
-      <div class="post">
-        <span class="email">{{ content.email_user }}</span>
-      </div>
-
-      {#             administrative buutons #}
-
-      {% if user.hasPermission('administer nodes') %}
-        <div class="manage">
-          {{ button }}
+    {# user data #}
+    <div class="user-data-wrapper">
+      <div class="user-data">
+        <div class="avatar-user">
+          {{ content.avatar_user }}
         </div>
-      {% endif %}
+        <div class="name-user">
+          {{ content.name_user }}
+        </div>
+        <div class="date-created">
+          {{ content.created }}
+        </div>
+      </div>
     </div>
 
-    {#           block with comment text #}
-
-    <div class="comment-text">
+    {# user message #}
+    <div class="user-message">
       {% if content.image_user is not null %}
         <div class="picture"> {{ content.image_user }} </div>
       {% endif %}
@@ -57,5 +42,20 @@
     </div>
   </div>
 
+
+  {# User contacts #}
+  <div class="contact-wrapper">
+    <div class="phone"> {{ content.phone_user }}</div>
+    <div class="email">{{ content.email_user }}</div>
+  </div>
+
+  {# admin buttons #}
+  <div class="admin-buttons">
+    {% if user.hasPermission('administer nodes') %}
+      <div class="manage">
+        {{ button }}
+      </div>
+    {% endif %}
+  </div>
 
 </div>
