@@ -58,7 +58,7 @@ class ArController extends ControllerBase {
     $ar_form = $this->entityFormBuilder()->getForm($entity, 'add');
     $entity_id = $ar_storage->getQuery()
       ->sort('created', 'DESC')
-      ->pager(5)
+      ->pager(5, 0)
       ->execute();
 
     $view = \Drupal::entityTypeManager()->getViewBuilder('ar');

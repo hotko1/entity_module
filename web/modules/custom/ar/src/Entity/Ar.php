@@ -85,11 +85,12 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string',
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
+        'weight' => '-25',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -104,17 +105,18 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setPropertyConstraints('value', [
         'Regex' => [
-          'pattern' => '/^[\w+]{2,100}@([\w+]{2,20})\.[\w+]{2,20}$/',
+          'pattern' => '/^[0-9A-Za-z._-]+@[0-9A-Za-z.-]+\.[A-Za-z]{2,6}$/',
           'message' => t('Email should look like this: example@mail.com'),
         ],
       ])
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'email',
+        'label' => 'hidden',
+        'type' => 'email_mailto',
       ])
       ->setDisplayOptions('form', [
         'type' => 'string_textfield',
+        'weight' => '-15',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -124,7 +126,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('Phone should look like this: +380(99)9999999'))
       ->setSettings([
         'default_value' => '0',
-        'max_length' => '14',
+        'max_length' => '15',
         'text_processing' => 0,
       ])
       ->setPropertyConstraints('value', [
@@ -135,11 +137,12 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
-        'type' => 'string',
+        'label' => 'hidden',
+        'type' => 'telephone_link',
       ])
       ->setDisplayOptions('form', [
-        'type' => 'string_textfield',
+        'type' => 'telephone_default',
+        'weight' => '-5',
       ])
       ->setDisplayConfigurable('form', TRUE)
       ->setDisplayConfigurable('view', TRUE);
@@ -154,7 +157,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ])
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
-        'label' => 'above',
+        'label' => 'hidden',
         'type' => 'string_textarea',
       ])
       ->setDisplayOptions('form', [
@@ -192,9 +195,11 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
         'file_directory' => 'images/image/',
         'alt_field_required' => FALSE,
         'alt_field' => FALSE,
+        'alt_default' => t('User avatar'),
         'file_extensions' => 'png jpg jpeg',
         'max_filesize' => 5242880,
         'default_value' => NULL,
+        'default_alt' => t('User avatar'),
       ])
       ->setDisplayOptions('view', [
         'label' => 'hidden',
@@ -331,6 +336,20 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
    */
   public function setCreationTime($phone_user) {
     return $this->set('created', $phone_user);
+  }
+
+  /**
+   * Get default avatar.
+   */
+  public function getDefaultAvatar() {
+    return [
+      '#theme' => 'image',
+      '#uri' => '/module/custom/ar/files/default_ava.png',
+      '#alt' => t('User avatar'),
+      '#attributes' => [
+        'style' => 'width: 150px',
+      ],
+    ];
   }
 
 }

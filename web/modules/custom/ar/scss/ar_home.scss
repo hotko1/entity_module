@@ -6,6 +6,14 @@
   .ar-form{
     width: 60%;
     margin: 0 auto;
+    .result_message{
+      margin-bottom: 10px;
+      .novalid{
+        padding: 5px;
+        background: #ffe4b5;
+        @include fontz(18px,26px,400,normal,#ff4500);
+      }
+    }
     .form-group{
       .control-label{}
       .form-control{}
@@ -52,9 +60,7 @@
             .name-user{
               padding: 10px;
               .field--name-name-user{
-                .field--item{
-                  font-size: 28px;
-                }
+                @include fontz(28px,30px,400,normal,#000000);
               }
             }
             .date-created{
@@ -75,6 +81,7 @@
             .field--name-image-user{
               .img-responsive{
                 margin-right: 15px;
+                margin-bottom: 10px;
                 //object-fit: cover;
                 max-width: 300px;
                 max-height: 300px;
@@ -90,10 +97,23 @@
         margin-top: 20px;
         display: flex;
         justify-content: center;
+        //align-items: center;
         padding: 10px;
         border: 1px solid #20B2AA	;
-        .phone{
+        .user-phone{
           margin-right: 30px;
+          .phone-link{
+            text-decoration: none;
+            @include fontz(20px,22px,400,normal,#000000);
+          }
+        }
+        .user-email{
+          .field--type-email{
+            a{
+              text-decoration: none;
+              @include fontz(20px,20px,400,normal,#000000);
+            }
+          }
         }
       }
       .admin-buttons{}

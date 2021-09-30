@@ -52,6 +52,18 @@ a {
   width: 60%;
   margin: 0 auto;
 }
+.ar-home .ar-form .result_message {
+  margin-bottom: 10px;
+}
+.ar-home .ar-form .result_message .novalid {
+  padding: 5px;
+  background: #ffe4b5;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #ff4500;
+}
 .ar-home .ar-form .field--name-phone-user .form-group .form-control {
   width: 50%;
 }
@@ -79,8 +91,12 @@ a {
 .ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user {
   padding: 10px;
 }
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user .field--name-name-user .field--item {
+.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user .field--name-name-user {
   font-size: 28px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
 }
 .ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .date-created {
   padding: 10px;
@@ -94,6 +110,7 @@ a {
 }
 .ar-home .guestbook .reviews .top-wrapper .user-message .picture .field--name-image-user .img-responsive {
   margin-right: 15px;
+  margin-bottom: 10px;
   max-width: 300px;
   max-height: 300px;
 }
@@ -104,8 +121,24 @@ a {
   padding: 10px;
   border: 1px solid #20B2AA;
 }
-.ar-home .guestbook .reviews .contact-wrapper .phone {
+.ar-home .guestbook .reviews .contact-wrapper .user-phone {
   margin-right: 30px;
+}
+.ar-home .guestbook .reviews .contact-wrapper .user-phone .phone-link {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
+}
+.ar-home .guestbook .reviews .contact-wrapper .user-email .field--type-email a {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
 }
 .ar-home .pager-nav .pagination .pager__item:not(:first-child) a {
   margin-left: 10px;

@@ -45,8 +45,14 @@
 
   {# User contacts #}
   <div class="contact-wrapper">
-    <div class="phone"> {{ content.phone_user }}</div>
-    <div class="email">{{ content.email_user }}</div>
+    <div class="user-phone">
+      <a class="phone-link" href="tel:{{ content.phone_user[0] }}">{{ content.phone_user[0] }}</a>
+{#      {{ content.phone_user }}#}
+    </div>
+    <div class="user-email">
+{#      <a class="user-email" href="mailto:{{ content.email_user }}">{{ content.email_user }}</a>#}
+      {{ content.email_user }}
+    </div>
   </div>
 
   {# admin buttons #}
@@ -57,5 +63,6 @@
       </div>
     {% endif %}
   </div>
+  {{ dump(content) }}
 
 </div>
