@@ -1,5 +1,5 @@
 name: Ar
 type: module
-description: 'This module adds a ar.'
+description: 'This module adds a guestbook.'
 package: custom
-core_version_requirement: 9.x
+core_version_requirement: ^9

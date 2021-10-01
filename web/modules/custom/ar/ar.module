@@ -39,6 +39,7 @@ function ar_preprocess_ar(&$variables, $hook) {
   /** @var \Drupal\ar\Entity\Ar $entity */
   $entity = $variables['elements']['#ar'];
 
+  // Edd default avatar.
   if (empty($entity->avatar_user->target_id)) {
     $variables['content']['avatar_user'] = $entity->getDefaultAvatar();
   }

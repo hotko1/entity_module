@@ -4,16 +4,17 @@ entity.ar.full:
   title: 'Ar: Reviews all'
   route_name: entity.ar.full
   description: 'Full page'
-  parent: entity.ar.full
-  weight: 5
+  parent: system.admin_structure
+  weight: 30
 entity.ar.collection:
   title: 'Ar: Reviews listing'
   route_name: entity.ar.collection
   description: 'List Reviews'
   parent: system.admin_structure
-  weight: 10
+  weight: 31
 ar.admin.structure.settings:
   title: Review Settings
   descriotion: 'Configure Review entity'
   route_name: ar.review_settings
   parent: system.admin_structure
+  weight: 32

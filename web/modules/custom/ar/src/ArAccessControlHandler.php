@@ -38,7 +38,7 @@ class ArAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    *
    * Separate from the chekAccess because the entity does not yet exist, it will
-   * created during the 'add' process.
+   * creat during the 'add' process.
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
     return AccessResult::allowedIfHasPermission($account, 'add review entity');

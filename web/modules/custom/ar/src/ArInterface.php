@@ -7,7 +7,7 @@ use Drupal\user\EntityOwnerInterface;
 use Drupal\Core\Entity\EntityChangedInterface;
 
 /**
- * Provides an interface defining a Ar entity.
+ * Provides an interface defining an Ar entity.
  *
  * @ingroup ar
  */

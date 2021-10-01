@@ -6,15 +6,9 @@ entity.ar.full:
   defaults:
     # Calls the view controller, defined in the annotation of the review entity
     _controller: '\Drupal\ar\Controller\ArController::content'
-#    _entity_view: 'ar'
-#    _entity_list: 'ar'
     _title: 'Guestbook'
   requirements:
     # Calls the access controller of the entity, $operation 'view'
-#    _entity_access: 'ar.view'
-#    _entity_create_access: 'ar'
-#    _permission: 'administer review entity'
-#    _permission: 'view ar'
     _permission: 'access content'
 
 entity.ar.canonical:

@@ -3,20 +3,7 @@
 namespace Drupal\ar\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Entity\FieldableEntityInterface;
-use Drupal\Core\Render\RendererInterface;
-use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\node\Entity\Node;
-use Symfony\Component\HttpFoundation\Response;
-Use \Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Database\Database;
-use Drupal\file\Entity\File;
-use Drupal\Core\Url;
-use Drupal\Core\Database\Query\PagerSelectExtender;
 
 /**
  * This is our guest book controller.
@@ -24,12 +11,16 @@ use Drupal\Core\Database\Query\PagerSelectExtender;
 class ArController extends ControllerBase {
 
   /**
+   * Do some functions.
+   *
    * @var \Drupal\Core\Entity\EntityFormBuilder
    */
   protected $entityBuild;
 
   /**
-   * @var \Drupal\Core\Entity\EntityTypeManager
+   * Do some functions.
+   *
+   * @var \Drupal\Core\Entity\EntityFormBuilder
    */
   protected $formBuild;
 
@@ -48,7 +39,7 @@ class ArController extends ControllerBase {
   }
 
   /**
-   * Render the form.
+   * Render the form with comments.
    */
   public function content() {
     $comments = [];

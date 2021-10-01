@@ -4,7 +4,6 @@ namespace Drupal\ar\Form;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Language\Language;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Ajax\HtmlCommand;
 
@@ -59,14 +58,6 @@ class ArForm extends ContentEntityForm {
       ],
     ];
 
-//    $entity = $this->entity;
-
-//    $form['langcode'] = [
-//      '#title' => $this->t('langcode'),
-//      '#type' => 'language_select',
-//      '#default_value' => $entity->getUntranslated()->language()->getId(),
-//      '#languages' => Language::STATE_ALL,
-//    ];
     return $form;
   }
 

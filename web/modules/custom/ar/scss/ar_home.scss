@@ -33,14 +33,10 @@
     }
   }
   .guestbook{
-    //margin-top: 40px;
     .reviews{
       margin-top: 40px;
       padding: 15px;
       background-color: #FFF5EE;
-      //display: flex;
-      //flex-direction: column;
-      //align-items: center;
     }
   }
   .pager-nav{
@@ -77,11 +73,7 @@
     .user-data-wrapper{
       .user-data{
         background-color: #F5DEB3;
-        //width: 20%;
         min-width: 170px;
-        //display: flex;
-        //flex-direction: column;
-        //align-items: center;
         text-align: center;
         .avatar-user{
           padding: 10px;
@@ -91,6 +83,11 @@
               width: 150px;
               height: 150px;
             }
+          }
+          .img-responsive{
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
           }
         }
         .name-user{
@@ -108,17 +105,15 @@
       }
     }
     .user-message{
-      //width: 80%;
       margin-left: 10px;
       padding: 10px;
       .picture{
-        //padding: 10px;
         float: left;
         .field--name-image-user{
           .img-responsive{
             margin-right: 15px;
             margin-bottom: 10px;
-            //object-fit: cover;
+            object-fit: cover;
             max-width: 300px;
             max-height: 300px;
           }
@@ -133,7 +128,6 @@
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    //align-items: center;
     padding: 10px;
     border: 1px solid #20B2AA	;
     .user-phone{

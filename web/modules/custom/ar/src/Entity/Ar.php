@@ -2,16 +2,10 @@
 
 namespace Drupal\ar\Entity;
 
-//use Drupal\ar\ArInterface;
-use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\ContentEntityInterface;
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Entity\EntityChangedTrait;
-use Drupal\datetime\Plugin\Field\FieldType\DateTimeItem;
-use Drupal\user\UserInterface;
 
 /**
  * Defines the ar entity.
@@ -152,8 +146,12 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('The message of the user'))
       ->setSettings([
         'default_value' => '0',
-        'max_length' => '5000',
         'text_processing' => 0,
+      ])
+      ->setPropertyConstraints('value', [
+        'Length' => [
+          'max' => '5000',
+        ],
       ])
       ->setRequired(TRUE)
       ->setDisplayOptions('view', [
@@ -347,7 +345,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
       '#uri' => '/modules/custom/ar/files/default_ava.png',
       '#alt' => t('Default user avatar'),
       '#attributes' => [
-        'style' => 'width: 150px',
+        'styles' => 'width: 150px',
       ],
     ];
   }
