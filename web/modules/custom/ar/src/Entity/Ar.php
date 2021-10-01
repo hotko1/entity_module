@@ -344,8 +344,8 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
   public function getDefaultAvatar() {
     return [
       '#theme' => 'image',
-      '#uri' => '/module/custom/ar/files/default_ava.png',
-      '#alt' => t('User avatar'),
+      '#uri' => '/modules/custom/ar/files/default_ava.png',
+      '#alt' => t('Default user avatar'),
       '#attributes' => [
         'style' => 'width: 150px',
       ],

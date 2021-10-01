@@ -68,15 +68,15 @@ class ArController extends ControllerBase {
       $comments[] = $view->view($review);
     }
 
-//    $pager = [
-//      '#type' => 'pager',
-//    ];
-
     return [
       '#theme' => 'ar_page',
       '#form' => $ar_form,
       '#review' => $comments,
-//      '#pager' => $pager,
+      '#contextual_links' => [
+        'ar' => [
+          'route_parameters' => ['ar' => $entity->id()],
+        ],
+      ],
       '#pager' => [
         '#type' => 'pager',
       ],

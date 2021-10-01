@@ -1,0 +1,9 @@
+edit_configure:
+  title: 'Edit form'
+  route_name: 'entity.ar.edit_form'
+  group: 'ar'
+
+delete_configure:
+  title: 'Delete form'
+  route_name: 'entity.ar.delete_form'
+  group: 'ar'

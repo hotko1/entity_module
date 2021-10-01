@@ -13,6 +13,11 @@
         background: #ffe4b5;
         @include fontz(18px,26px,400,normal,#ff4500);
       }
+      .valid{
+        padding: 5px;
+        background: #f5f5f5;
+        @include fontz(18px,26px,400,normal,#20b2aa);
+      }
     }
     .form-group{
       .control-label{}
@@ -36,87 +41,6 @@
       //display: flex;
       //flex-direction: column;
       //align-items: center;
-      .top-wrapper{
-        display: flex;
-        .user-data-wrapper{
-          .user-data{
-            background-color: #F5DEB3;
-            //width: 20%;
-            min-width: 170px;
-            //display: flex;
-            //flex-direction: column;
-            //align-items: center;
-            text-align: center;
-            .avatar-user{
-              padding: 10px;
-              .field--name-avatar-user{
-                .img-responsive{
-                  object-fit: cover;
-                  width: 150px;
-                  height: 150px;
-                }
-              }
-            }
-            .name-user{
-              padding: 10px;
-              .field--name-name-user{
-                @include fontz(28px,30px,400,normal,#000000);
-              }
-            }
-            .date-created{
-              padding: 10px;
-              .field--name-created{
-                .field--item{}
-              }
-            }
-          }
-        }
-        .user-message{
-          //width: 80%;
-          margin-left: 10px;
-          padding: 10px;
-          .picture{
-            //padding: 10px;
-            float: left;
-            .field--name-image-user{
-              .img-responsive{
-                margin-right: 15px;
-                margin-bottom: 10px;
-                //object-fit: cover;
-                max-width: 300px;
-                max-height: 300px;
-              }
-            }
-          }
-          .message-user{
-            .field--label-above{}
-          }
-        }
-      }
-      .contact-wrapper{
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        //align-items: center;
-        padding: 10px;
-        border: 1px solid #20B2AA	;
-        .user-phone{
-          margin-right: 30px;
-          .phone-link{
-            text-decoration: none;
-            @include fontz(20px,22px,400,normal,#000000);
-          }
-        }
-        .user-email{
-          .field--type-email{
-            a{
-              text-decoration: none;
-              @include fontz(20px,20px,400,normal,#000000);
-            }
-          }
-        }
-      }
-      .admin-buttons{}
     }
   }
   .pager-nav{
@@ -143,6 +67,88 @@
       }
       & > li > span{
         border-radius: 20px;
+      }
+    }
+  }
+}
+.guestbook-ar{
+  .top-wrapper{
+    display: flex;
+    .user-data-wrapper{
+      .user-data{
+        background-color: #F5DEB3;
+        //width: 20%;
+        min-width: 170px;
+        //display: flex;
+        //flex-direction: column;
+        //align-items: center;
+        text-align: center;
+        .avatar-user{
+          padding: 10px;
+          .field--name-avatar-user{
+            .img-responsive{
+              object-fit: cover;
+              width: 150px;
+              height: 150px;
+            }
+          }
+        }
+        .name-user{
+          padding: 10px;
+          .field--name-name-user{
+            @include fontz(28px,30px,400,normal,#000000);
+          }
+        }
+        .date-created{
+          padding: 10px;
+          .field--name-created{
+            .field--item{}
+          }
+        }
+      }
+    }
+    .user-message{
+      //width: 80%;
+      margin-left: 10px;
+      padding: 10px;
+      .picture{
+        //padding: 10px;
+        float: left;
+        .field--name-image-user{
+          .img-responsive{
+            margin-right: 15px;
+            margin-bottom: 10px;
+            //object-fit: cover;
+            max-width: 300px;
+            max-height: 300px;
+          }
+        }
+      }
+      .message-user{
+        .field--label-above{}
+      }
+    }
+  }
+  .contact-wrapper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    //align-items: center;
+    padding: 10px;
+    border: 1px solid #20B2AA	;
+    .user-phone{
+      margin-right: 30px;
+      .phone-link{
+        text-decoration: none;
+        @include fontz(20px,22px,400,normal,#000000);
+      }
+    }
+    .user-email{
+      .field--type-email{
+        a{
+          text-decoration: none;
+          @include fontz(20px,20px,400,normal,#000000);
+        }
       }
     }
   }

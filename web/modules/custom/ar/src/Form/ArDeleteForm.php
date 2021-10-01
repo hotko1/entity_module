@@ -54,7 +54,7 @@ class ArDeleteForm extends ContentEntityConfirmFormBase {
     $this->logger('guestbook')->notice('deleted %title.', [
       '%title' => $this->entity->label(),
     ]);
-    $form_state->setRedirect('entity.ar.collection');
+    $form_state->setRedirect('entity.ar.full');
   }
 
 }

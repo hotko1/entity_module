@@ -59,7 +59,7 @@ entity.ar.delete_form:
   path: '/ar/{ar}/delete'
   defaults:
     # Calls the form.delete controller, defined in the review entity.
-    _entity_form: ar_review.delete
+    _entity_form: ar.delete
     _title: 'Delete Review'
   requirements:
     _entity_access: 'ar.delete'

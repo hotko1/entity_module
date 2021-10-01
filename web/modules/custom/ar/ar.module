@@ -36,6 +36,11 @@ function ar_preprocess_ar(&$variables, $hook) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 
-//  /** @var \Drupal\ar\Entity\Ar $entity */
-//  $entity = $variables['elements']['#ar'];
+  /** @var \Drupal\ar\Entity\Ar $entity */
+  $entity = $variables['elements']['#ar'];
+
+  if (empty($entity->avatar_user->target_id)) {
+    $variables['content']['avatar_user'] = $entity->getDefaultAvatar();
+  }
+
 }

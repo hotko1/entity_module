@@ -64,6 +64,15 @@ a {
   letter-spacing: normal;
   color: #ff4500;
 }
+.ar-home .ar-form .result_message .valid {
+  padding: 5px;
+  background: #f5f5f5;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #20b2aa;
+}
 .ar-home .ar-form .field--name-phone-user .form-group .form-control {
   width: 50%;
 }
@@ -71,74 +80,6 @@ a {
   margin-top: 40px;
   padding: 15px;
   background-color: #FFF5EE;
-}
-.ar-home .guestbook .reviews .top-wrapper {
-  display: flex;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data {
-  background-color: #F5DEB3;
-  min-width: 170px;
-  text-align: center;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .avatar-user {
-  padding: 10px;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .avatar-user .field--name-avatar-user .img-responsive {
-  object-fit: cover;
-  width: 150px;
-  height: 150px;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user {
-  padding: 10px;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .name-user .field--name-name-user {
-  font-size: 28px;
-  line-height: 30px;
-  font-weight: 400;
-  letter-spacing: normal;
-  color: #000000;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-data-wrapper .user-data .date-created {
-  padding: 10px;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-message {
-  margin-left: 10px;
-  padding: 10px;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-message .picture {
-  float: left;
-}
-.ar-home .guestbook .reviews .top-wrapper .user-message .picture .field--name-image-user .img-responsive {
-  margin-right: 15px;
-  margin-bottom: 10px;
-  max-width: 300px;
-  max-height: 300px;
-}
-.ar-home .guestbook .reviews .contact-wrapper {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  border: 1px solid #20B2AA;
-}
-.ar-home .guestbook .reviews .contact-wrapper .user-phone {
-  margin-right: 30px;
-}
-.ar-home .guestbook .reviews .contact-wrapper .user-phone .phone-link {
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 22px;
-  font-weight: 400;
-  letter-spacing: normal;
-  color: #000000;
-}
-.ar-home .guestbook .reviews .contact-wrapper .user-email .field--type-email a {
-  text-decoration: none;
-  font-size: 20px;
-  line-height: 20px;
-  font-weight: 400;
-  letter-spacing: normal;
-  color: #000000;
 }
 .ar-home .pager-nav .pagination .pager__item:not(:first-child) a {
   margin-left: 10px;
@@ -158,6 +99,75 @@ a {
 }
 .ar-home .pager-nav .pagination > li > span {
   border-radius: 20px;
+}
+
+.guestbook-ar .top-wrapper {
+  display: flex;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data {
+  background-color: #F5DEB3;
+  min-width: 170px;
+  text-align: center;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data .avatar-user {
+  padding: 10px;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data .avatar-user .field--name-avatar-user .img-responsive {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data .name-user {
+  padding: 10px;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data .name-user .field--name-name-user {
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
+}
+.guestbook-ar .top-wrapper .user-data-wrapper .user-data .date-created {
+  padding: 10px;
+}
+.guestbook-ar .top-wrapper .user-message {
+  margin-left: 10px;
+  padding: 10px;
+}
+.guestbook-ar .top-wrapper .user-message .picture {
+  float: left;
+}
+.guestbook-ar .top-wrapper .user-message .picture .field--name-image-user .img-responsive {
+  margin-right: 15px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  max-height: 300px;
+}
+.guestbook-ar .contact-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #20B2AA;
+}
+.guestbook-ar .contact-wrapper .user-phone {
+  margin-right: 30px;
+}
+.guestbook-ar .contact-wrapper .user-phone .phone-link {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
+}
+.guestbook-ar .contact-wrapper .user-email .field--type-email a {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #000000;
 }
 
 /*# sourceMappingURL=ar_home.css.map */

@@ -9,3 +9,4 @@ delete review entity:
 administer review entity:
   title: 'Administer Review entity'
   restrict access: TRUE
+

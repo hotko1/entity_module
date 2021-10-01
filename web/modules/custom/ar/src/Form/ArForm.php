@@ -27,7 +27,7 @@ class ArForm extends ContentEntityForm {
     $form['name_user']['widget'][0]['value']['#ajax'] = [
       'callback' => '::nameValidateCallback',
       'disable-refocus' => TRUE,
-      'event' => 'change',
+      'event' => 'mouseout',
       'progress' => [
         'type' => 'none',
       ],
@@ -40,7 +40,7 @@ class ArForm extends ContentEntityForm {
     $form['email_user']['widget'][0]['value']['#ajax'] = [
       'callback' => '::mailValidateCallback',
       'disable-refocus' => TRUE,
-      'event' => 'change',
+      'event' => 'mouseout',
       'progress' => [
         'type' => 'none',
       ],
@@ -53,7 +53,7 @@ class ArForm extends ContentEntityForm {
     $form['phone_user']['widget'][0]['value']['#ajax'] = [
       'callback' => '::phoneValidateCallback',
       'disable-refocus' => TRUE,
-      'event' => 'change',
+      'event' => 'mouseout',
       'progress' => [
         'type' => 'none',
       ],
@@ -87,7 +87,7 @@ class ArForm extends ContentEntityForm {
       $response->addCommand(
         new HtmlCommand(
           '.name-result_message',
-          NULL
+          '<div class="valid">' . $this->t('Valid name.')
         )
       );
     }
@@ -112,7 +112,7 @@ class ArForm extends ContentEntityForm {
       $response->addCommand(
         new HtmlCommand(
           '.email-result_message',
-          NULL
+          '<div class="valid">' . $this->t('Valid mail.')
         )
       );
     }
@@ -137,7 +137,7 @@ class ArForm extends ContentEntityForm {
       $response->addCommand(
         new HtmlCommand(
           '.phone-result_message',
-          NULL
+          '<div class="valid">' . $this->t('Valid phone.')
         )
       );
     }
