@@ -217,7 +217,7 @@ class Ar extends ContentEntityBase implements ContentEntityInterface {
         'label' => 'hidden',
         'type' => 'datetime_custom',
         'settings' => [
-          'data_format' => 'm/j/Y H:i:s',
+          'data_format' => 'm/d/Y H:i:s',
         ],
       ]);
 
